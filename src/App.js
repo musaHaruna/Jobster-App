@@ -1,5 +1,11 @@
+import { Landing, Error, Dashboard, Register } from './pages'
+
 function App() {
-  return <h1>jobster</h1>;
+  return (
+    <div>
+      <Landing />
+    </div>
+  )
 }
 
-export default App;
+export default App
