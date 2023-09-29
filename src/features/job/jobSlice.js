@@ -1,7 +1,7 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
-import customFetch from '../../utils/axios';
-import { getUserFromLocalStorage } from '../../utils/localStorage';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { toast } from 'react-toastify'
+import customFetch from '../../utils/axios'
+import { getUserFromLocalStorage } from '../../utils/localStorage'
 
 const initialState = {
   isLoading: false,
@@ -14,18 +14,21 @@ const initialState = {
   status: 'pending',
   isEditing: false,
   editJobId: '',
-};
+}
 
 const jobSlice = createSlice({
   name: 'job',
   initialState,
   reducers: {
     handleChange: (state, { payload: { name, value } }) => {
-      state[name] = value;
+      state[name] = value
+    },
+    clearValues: () => {
+      return initialState
     },
   },
-});
+})
 
-export const { handleChange } = jobSlice.actions;
+export const { handleChange, clearValues } = jobSlice.actions
 
-export default jobSlice.reducer;
+export default jobSlice.reducer
